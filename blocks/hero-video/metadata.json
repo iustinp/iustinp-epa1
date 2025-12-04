@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-video",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2025-12-04T09:59:49.923Z",
+  "sourceContext": {
+    "originUrl": "https://academy.worldbank.org/en/home",
+    "originPage": "World Bank Academy homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "landing-hero",
+    "imagePattern": "video-background"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + scroll indicator",
+    "buttonCount": 0,
+    "imageCount": 0,
+    "videoBackground": true
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "landing pages with video backgrounds",
+      "prominent page introductions"
+    ],
+    "notSuitableFor": [
+      "static image backgrounds",
+      "pages without video support",
+      "content-heavy sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-04T09:59:49.923Z"
+  }
+}
