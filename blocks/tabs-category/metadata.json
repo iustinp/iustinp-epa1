@@ -1,0 +1,41 @@
+{
+  "variantName": "tabs-category",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2025-12-04T10:01:47.792Z",
+  "sourceContext": {
+    "originUrl": "https://academy.worldbank.org/en/home",
+    "originPage": "World Bank Academy homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "category-navigation",
+    "imagePattern": "content-dependent"
+  },
+  "contentPattern": {
+    "structure": "tab labels + content panels with cards",
+    "buttonCount": 0,
+    "imageCount": "variable",
+    "tabCount": "multiple"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "topic-based content organization",
+      "category navigation",
+      "program filtering by sector",
+      "content segmentation by theme"
+    ],
+    "notSuitableFor": [
+      "simple content sections",
+      "non-interactive layouts",
+      "single category displays"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-04T10:01:47.792Z"
+  }
+}

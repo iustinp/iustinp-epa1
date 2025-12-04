@@ -1,0 +1,41 @@
+{
+  "variantName": "carousel-program",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2025-12-04T10:01:02.469Z",
+  "sourceContext": {
+    "originUrl": "https://academy.worldbank.org/en/home",
+    "originPage": "World Bank Academy homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "program-catalog",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description + link",
+    "buttonCount": 1,
+    "imageCount": "multiple",
+    "scrollable": true
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "program catalogs",
+      "course galleries",
+      "service showcases",
+      "scrollable card collections"
+    ],
+    "notSuitableFor": [
+      "single items",
+      "full-screen hero carousels",
+      "image-only galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-04T10:01:02.469Z"
+  }
+}

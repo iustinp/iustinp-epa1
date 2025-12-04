@@ -11,17 +11,76 @@
  */
 
 :root {
-  /* colors */
+  /* World Bank Brand Colors */
+  --brand-dark-blue: #002244;
+  --brand-blue: #009fda;
+
+  /* Primary colors */
+  --primary-color: #004370;
+  --secondary-color: #169af3;
+
+  /* Background colors */
   --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-page: #f5f7f9;
+  --light-color: #e7edf3;
+  --dark-color: #0c0f12;
+
+  /* Text colors */
+  --text-color: rgba(0, 13, 26, 0.7);
+  --text-emphasis: rgba(0, 13, 26, 0.96);
+  --text-subdued: rgba(0, 13, 26, 0.57);
+  --text-on-dark: rgba(255, 255, 255, 0.9);
+
+  /* Link colors */
+  --link-color: #004370;
+  --link-hover-color: #169af3;
+  --link-pressed-color: #012740;
+
+  /* State colors */
+  --success-color: #56c606;
+  --warning-color: #e19d00;
+  --error-color: #da1e28;
+  --info-color: #169af3;
+
+  /* Neutral colors */
+  --neutral-05: #f5f7f9;
+  --neutral-10: #e7edf3;
+  --neutral-15: #dae3eb;
+  --neutral-20: #d4dee8;
+  --neutral-30: #bdccdb;
+  --neutral-40: #8a9db1;
+  --neutral-50: #586e84;
+  --neutral-60: #4b5e71;
+  --neutral-70: #3d4c5c;
+  --neutral-80: #252e37;
+  --neutral-90: #181f25;
+  --neutral-95: #0c0f12;
+
+  /* Spacing */
+  --spacing-xtiny: 0.125rem;
+  --spacing-tiny: 0.25rem;
+  --spacing-xxsmall: 0.25rem;
+  --spacing-xsmall: 0.5rem;
+  --spacing-small: 0.75rem;
+  --spacing-regular: 1.25rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 1.75rem;
+  --spacing-xlarge: 2rem;
+  --spacing-xxlarge: 2.5rem;
+  --spacing-huge: 3.5rem;
+  --spacing-xhuge: 4rem;
+
+  /* Border radius */
+  --border-radius-none: 0;
+  --border-radius-small: 0.125rem;
+  --border-radius-base: 0.25rem;
+  --border-radius-medium: 0.5rem;
+  --border-radius-large: 1rem;
+  --border-radius-xlarge: 2rem;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'Open Sans', sans-serif;
+  --heading-font-family: 'Open Sans', sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -32,26 +91,13 @@
   --heading-font-size-xxl: 55px;
   --heading-font-size-xl: 44px;
   --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
+  --heading-font-size-m: 28px;
   --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xs: 20px;
 
   /* nav height */
   --nav-height: 64px;
   --header-height: var(--nav-height);
-}
-
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
 }
 
 @media (width >= 900px) {
@@ -74,11 +120,12 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
+  background-color: var(--background-page);
   color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  font-size: var(--body-font-size-s);
+  line-height: 1.4;
+  font-weight: 400;
 }
 
 body.appear {
@@ -105,12 +152,13 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.12;
   scroll-margin: 40px;
+  color: var(--text-emphasis);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -169,25 +217,19 @@ a:hover {
 /* buttons */
 a.button:any-link,
 button {
-  box-sizing: border-box;
   display: inline-block;
-  max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
+  padding: 1rem 2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius-xlarge);
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
   cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  transition: all 0.2s;
 }
 
 a.button:hover,
@@ -195,20 +237,27 @@ a.button:focus,
 button:hover,
 button:focus {
   background-color: var(--link-hover-color);
-  cursor: pointer;
+  border-color: var(--link-hover-color);
+  text-decoration: none;
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+  background-color: var(--neutral-20);
+  border-color: var(--neutral-20);
+  cursor: not-allowed;
 }
 
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+a.button.secondary:hover,
+button.secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 main img {
@@ -259,4 +308,10 @@ main .section.highlight {
 
 .section.hidden {
   display: none;
+}
+
+/* Sticky cards section - creates tall scrollable container */
+.section.sticky-cards-section {
+  min-height: 250vh;
+  position: relative;
 }

@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-04T10:00:17.489Z",
+  "sourceContext": {
+    "originUrl": "https://academy.worldbank.org/en/home",
+    "originPage": "World Bank Academy homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description",
+    "buttonCount": 0,
+    "imageCount": 4,
+    "gridLayout": "masonry"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlights",
+      "service showcases",
+      "benefit presentations",
+      "capability overviews"
+    ],
+    "notSuitableFor": [
+      "product catalogs",
+      "team member profiles",
+      "blog post listings"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-04T10:00:17.489Z"
+  }
+}

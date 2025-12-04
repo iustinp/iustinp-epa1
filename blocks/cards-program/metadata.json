@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-program",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-04T10:00:43.000Z",
+  "sourceContext": {
+    "originUrl": "https://academy.worldbank.org/en/home",
+    "originPage": "World Bank Academy homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "detailed",
+    "purpose": "program-highlights",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + tag + heading + description + links",
+    "buttonCount": 1,
+    "imageCount": 3,
+    "gridLayout": "asymmetric"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "program catalogs",
+      "course offerings",
+      "service packages",
+      "detailed product showcases"
+    ],
+    "notSuitableFor": [
+      "simple feature lists",
+      "team profiles",
+      "minimal card layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-04T10:00:43.000Z"
+  }
+}

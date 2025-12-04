@@ -1,0 +1,100 @@
+/* Sticky header styling */
+.cards-feature .cards-feature-sticky-header {
+  position: sticky;
+  top: var(--nav-height, 64px);
+  z-index: 2;
+  text-align: center;
+  padding: 320px 0;
+  pointer-events: none;
+}
+
+.cards-feature .cards-feature-sticky-header > * {
+  pointer-events: auto;
+}
+
+.cards-feature .cards-feature-sticky-header h2 {
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 1.5rem;
+}
+
+.cards-feature .cards-feature-sticky-header a.button {
+  margin-top: 0;
+}
+
+.cards-feature > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cards-feature > ul > li {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgb(231, 237, 243) 0px 0px 204px 0px;
+  flex: 1 1 100%;
+  aspect-ratio: 1;
+  z-index: 3;
+}
+
+.cards-feature .cards-feature-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 0;
+}
+
+.cards-feature > ul > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cards-feature .cards-feature-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+}
+
+.cards-feature .cards-feature-card-body h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cards-feature .cards-feature-card-body p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+/* Tablet: 2 columns, equal width */
+@media (width >= 768px) {
+  .cards-feature > ul > li {
+    flex: 0 0 calc(50% - 6px);
+  }
+}
+
+/* Desktop: Staggered 2-column layout with alternating sizes */
+@media (width >= 1024px) {
+  .cards-feature > ul > li:nth-child(odd) {
+    flex: 0 0 540px;
+  }
+
+  .cards-feature > ul > li:nth-child(even) {
+    flex: 0 0 432px;
+  }
+}
