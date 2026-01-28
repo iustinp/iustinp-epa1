@@ -2,7 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 1280px)');
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -118,13 +118,42 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Check if current page is the homepage
+ * @returns {boolean} True if on homepage
+ */
+function isHomepage() {
+  const { pathname } = window.location;
+  return pathname === '/'
+    || pathname === '/en/home'
+    || pathname === '/content/en/home'
+    || pathname === '/content/en/home.html';
+}
+
+/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  // Check if homepage for nav variant
+  const homepage = isHomepage();
+
+  // Add homepage class to header element for styling
+  if (homepage) {
+    const headerElement = block.closest('header');
+    if (headerElement) {
+      headerElement.classList.add('header-homepage');
+    }
+  }
+
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  let navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
+
+  // Use homepage nav variant if on homepage
+  if (homepage && !navMeta) {
+    navPath = '/content/nav-home';
+  }
+
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -161,6 +190,15 @@ export default async function decorate(block) {
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
+  }
+
+  // Handle search icon in nav-tools
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const searchText = navTools.textContent.trim();
+    if (searchText === ':search:') {
+      navTools.innerHTML = '<span class="icon-search" role="button" aria-label="Search" tabindex="0"></span>';
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');

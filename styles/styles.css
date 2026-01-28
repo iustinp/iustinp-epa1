@@ -21,7 +21,7 @@
 
   /* Background colors */
   --background-color: white;
-  --background-page: #f5f7f9;
+  --background-page: #e7edf3;
   --light-color: #e7edf3;
   --dark-color: #0c0f12;
 
@@ -314,4 +314,5 @@ main .section.highlight {
 .section.sticky-cards-section {
   min-height: 250vh;
   position: relative;
+  margin-top: 0;
 }
