@@ -1,9 +1,10 @@
 .tabs .tabs-list {
   display: flex;
-  gap: 0.5ch;
+  gap: 2rem;
   max-width: 100%;
   font-size: var(--body-font-size-xs);
   overflow-x: auto;
+  border-bottom: 1px solid #ccc;
 }
 
 @media (width >= 600px) {
@@ -21,38 +22,80 @@
 .tabs .tabs-list button {
   flex: 0 0 max-content;
   margin: 0;
-  border: 1px solid #dadada;
+  border: none;
+  border-bottom: 3px solid transparent;
   border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
+  padding: 0.75em 0.5em;
+  background-color: transparent;
+  color: #004370;
+  font-weight: 600;
   line-height: unset;
   text-align: initial;
   text-overflow: unset;
   overflow: unset;
   white-space: unset;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  transition: border-color 0.2s;
 }
 
 .tabs .tabs-list button p {
   margin: 0;
 }
 
+.tabs .tabs-list button:hover {
+  border-bottom-color: #004370;
+}
 
 .tabs .tabs-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
+  border-bottom-color: #004370;
+  cursor: default;
 }
 
 .tabs .tabs-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
+  padding: 24px 0;
   overflow: auto;
+  line-height: 1.6;
 }
 
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
+}
+
+/* Content styling within tabs */
+.tabs .tabs-panel ul {
+  margin: 0.5em 0 1em;
+  padding-left: 1.5em;
+}
+
+.tabs .tabs-panel li {
+  margin-bottom: 0.5em;
+}
+
+.tabs .tabs-panel strong {
+  display: inline;
+}
+
+/* Bold text after line breaks acts as sub-header */
+.tabs .tabs-panel br + strong {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+/* First table (curriculum) - centered content */
+.tabs .tabs-panel > p > table:first-of-type,
+.tabs .tabs-panel table:first-of-type {
+  text-align: center;
+}
+
+.tabs .tabs-panel > p > table:first-of-type td,
+.tabs .tabs-panel table:first-of-type td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Single cell rows should center content */
+.tabs .tabs-panel table:first-of-type tr:first-child td,
+.tabs .tabs-panel table:first-of-type tr:nth-child(3) td,
+.tabs .tabs-panel table:first-of-type tr:nth-child(4) td {
+  text-align: center;
 }

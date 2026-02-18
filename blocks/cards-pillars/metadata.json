@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-pillars",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-03T08:17:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://academy.worldbank.org/en/how-we-work",
+    "originPage": "World Bank Academy How We Work page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "feature-pillars",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + description",
+    "buttonCount": 0,
+    "imageCount": 4,
+    "gridLayout": "4-column centered"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature pillars",
+      "value propositions",
+      "approach highlights",
+      "key principles with icons"
+    ],
+    "notSuitableFor": [
+      "product catalogs with large images",
+      "detailed program cards",
+      "team member profiles"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/en/how-we-work"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-03T08:17:00.000Z"
+  }
+}
