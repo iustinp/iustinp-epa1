@@ -1,0 +1,21 @@
+{
+  "templates": [
+    {
+      "name": "how-we-work-page",
+      "urls": ["https://academy.worldbank.org/en/how-we-work"],
+      "description": "World Bank Academy How We Work page with feature pillars and methodology content",
+      "blocks": [
+        {
+          "name": "cards-pillars",
+          "instances": [".academy_list_navigation.section"]
+        }
+      ]
+    },
+    {
+      "name": "resource-page",
+      "urls": ["https://academy.worldbank.org/en/resource"],
+      "description": "World Bank Academy Resources page with heading, banner image, and links to knowledge resources. All default content, no blocks.",
+      "blocks": []
+    }
+  ]
+}

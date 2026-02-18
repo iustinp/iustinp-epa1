@@ -21,13 +21,13 @@
 
   /* Background colors */
   --background-color: white;
-  --background-page: #e7edf3;
+  --background-page: white;
   --light-color: #e7edf3;
   --dark-color: #0c0f12;
 
   /* Text colors */
   --text-color: rgba(0, 13, 26, 0.7);
-  --text-emphasis: rgba(0, 13, 26, 0.96);
+  --text-emphasis: #012740;
   --text-subdued: rgba(0, 13, 26, 0.57);
   --text-on-dark: rgba(255, 255, 255, 0.9);
 
@@ -55,6 +55,9 @@
   --neutral-80: #252e37;
   --neutral-90: #181f25;
   --neutral-95: #0c0f12;
+
+  /* Divider colors */
+  --divider-on-light-default: #00396b29;
 
   /* Spacing */
   --spacing-xtiny: 0.125rem;
@@ -128,6 +131,11 @@ body {
   font-weight: 400;
 }
 
+/* Homepage-specific background */
+body.home {
+  background-color: #e7edf3;
+}
+
 body.appear {
   display: block;
 }
@@ -161,7 +169,12 @@ h6 {
   color: var(--text-emphasis);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
+}
+
 h2 { font-size: var(--heading-font-size-xl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
@@ -283,13 +296,18 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: 800px; /* 66.66% - default narrow width */
   margin: auto;
   padding: 0 24px;
 }
 
+/* First section (title/hero) is full width */
 main > .section:first-of-type {
   margin-top: 0;
+}
+
+main > .section:first-of-type > div {
+  max-width: 1200px; /* Full width for title/hero */
 }
 
 @media (width >= 900px) {
@@ -306,6 +324,18 @@ main .section.highlight {
   padding: 40px 0;
 }
 
+/* Medium width section - 83.33% */
+main .section.narrow > div,
+main .section.pillars-section > div {
+  max-width: 1000px;
+}
+
+/* Full width section - 100% */
+main .section.wide > div,
+main .section.full-width > div {
+  max-width: 1200px;
+}
+
 .section.hidden {
   display: none;
 }
@@ -315,4 +345,37 @@ main .section.highlight {
   min-height: 250vh;
   position: relative;
   margin-top: 0;
+}
+
+/* Bold text as sub-headers */
+main strong {
+  color: var(--text-emphasis);
+}
+
+/* Tables */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: var(--body-font-size-xs);
+}
+
+main table th,
+main table td {
+  padding: 0.75em 1em;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--neutral-20);
+}
+
+main table th {
+  font-weight: 700;
+  color: var(--text-emphasis);
+}
+
+/* First row (header) styling */
+main table tr:first-child td,
+main table tr:first-child th {
+  font-weight: 700;
+  color: var(--text-emphasis);
 }
