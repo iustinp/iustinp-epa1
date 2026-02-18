@@ -192,12 +192,29 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  // Handle search icon in nav-tools
+  // Handle search in nav-tools
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     const searchText = navTools.textContent.trim();
     if (searchText === ':search:') {
-      navTools.innerHTML = '<span class="icon-search" role="button" aria-label="Search" tabindex="0"></span>';
+      if (homepage) {
+        // Homepage: just a magnifier icon
+        navTools.innerHTML = `
+          <button type="button" class="nav-search-icon" aria-label="Search">
+            <span class="icon-search"></span>
+          </button>
+        `;
+      } else {
+        // Non-homepage: full search input with button
+        navTools.innerHTML = `
+          <div class="nav-search">
+            <input type="search" placeholder="Search Academy" aria-label="Search Academy">
+            <button type="button" class="nav-search-button" aria-label="Search">
+              <span class="icon-search"></span>
+            </button>
+          </div>
+        `;
+      }
     }
   }
 
